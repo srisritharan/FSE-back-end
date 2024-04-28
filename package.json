@@ -1,0 +1,20 @@
+{
+  "name": "back-end",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "MERN FSE Final project backend part",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "mongodb": "C:/Program Files/MongoDB/Server/6.0/bin",
+    "mongosh": "C:/Program Files/MongoDB/mongosh/mongosh-2.2.2/bin/mongosh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Sritharan Srinivasan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongodb": "^6.5.0"
+  }
+}
