@@ -18,8 +18,22 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post('/', async (req, res) => {
-    res.send("POST called");
+router.post('/authenticate', async (req, res) => {
+    try {
+        const db = client.db(dbName);
+        const collection = db.collection(collectionName);
+        const loginRequest = req.body;
+        const userFound = await collection.findOne({ "user": loginRequest.user });
+        if (!userFound) {
+            res.status(401).send("Unauthorized: user not found");
+        } else if (userFound.password === loginRequest.password) {
+            res.status(200).send("User logged in successfully!");
+        } else {
+            res.status(401).send("Unauthorized: password incorrect for user");
+        }
+    } catch (err) {
+        res.status(400).json({ error: err.message });
+    }
 });
 
 export default router;
