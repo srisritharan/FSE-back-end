@@ -1,6 +1,7 @@
 import express from "express";
 const router = express.Router();
-import dotenv  from "dotenv"; // to load in the environment vars
+import log from '../../utils/log.js';
+import dotenv from "dotenv"; // to load in the environment vars
 dotenv.config();
 
 const apiKey = process.env.API_KEY;

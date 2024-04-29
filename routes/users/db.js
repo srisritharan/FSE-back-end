@@ -13,7 +13,7 @@ export async function dbConnect() {
         await client.connect();
         log(`MongoDB Connected ${connectionString}`);
     } catch (err) {
-        console.error(err);
+        log(err);
         log("DB CONNECTION FAILED. Is database running?")
     }
 };
