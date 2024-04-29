@@ -6,7 +6,7 @@ import usersRouter from './routes/users/users.js';
 import queriesRouter from './routes/queries/queries.js';
 import dotenv  from "dotenv"; // to load in the environment vars
 dotenv.config();
-import log from './utlis/log.js'
+import log from './utils/log.js'
 import morgan from "morgan"
 
 const app = express(); //creates an express app object
@@ -24,5 +24,5 @@ app.use('/queries', queriesRouter);
 
 //start the server
 app.listen(port, () => {
-  log(`Back-end Server listening on port ${port}`);
+  log (`Back-end Server listening on port ${port}`);
 });
